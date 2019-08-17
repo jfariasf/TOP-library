@@ -4,9 +4,13 @@ const BOOK_NOTREAD_URL = "https://i.imgur.com/lQG2XCT.png";
 let form_container = document.querySelector(".form_container");
 let book_template = document.querySelector("#book_template");
 let container = document.querySelector("#container");
+let bg_overlay = document.querySelector("#bg_overlay");
 let form_flag = false;
 let newItems = false;
 
+bg_overlay.addEventListener("click", (event)=>{
+    toggleForm();
+})
 // No local copy and Book will be used as model only.
 function Book(title, author, pages, read, id) {
     this.id = id;
@@ -71,11 +75,14 @@ function removeBook(book){
 
 function toggleForm(){
     if(form_flag){
-        //form_container.style.display = "none";
+       // form_container.style.display = "none";
+        bg_overlay.classList.remove("overlay");
         form_container.classList.add("form_container_hidden");
         form_flag = false;
     }
     else{
+        bg_overlay.classList.add("overlay");
+        
         form_container.classList.remove("form_container_hidden");
         form_flag = true;
     }

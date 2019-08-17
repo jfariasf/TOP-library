@@ -2,6 +2,7 @@ html body{
     margin: 0px;
     padding: 0px;
     font-size: 70%;
+    font-family: "Lucida Sans Typewriter", "Lucida Console", Monaco, "Bitstream Vera Sans Mono", monospace;
 }
 #book_template{
     display: none;
@@ -46,14 +47,35 @@ input[type=number], input[type=text]{
 #navbar{
     display: flex;
     align-items: center;
-    justify-content: right;
-    text-align: right;
+    justify-content: space-between;
     background-image: url("https://i.imgur.com/qVv6WIU.jpg");
     background-repeat: no-repeat;
     background-size: 100% auto;
     padding: 10px;
     font-size: 2em;
     height: 80px;
+}
+#top_title{
+    margin-left: 50px;
+   font-weight: bold;
+   color: #fff;
+   text-shadow: 0px 0px 8px  black;
+   font-size: 1.5em;
+   
+}
+.overlay {
+    -ms-filter: "progid:DXImageTransform.Microsoft.Alpha(Opacity=50)";       /*   IE 8 */
+    filter: alpha(opacity=50);  /* IE 5-7 */
+    -moz-opacity: 0.5;          /* Netscape */
+    -khtml-opacity: 0.5;        /* Safari 1.x */
+    opacity: 0.5; 
+    position:absolute;
+    top:0;
+    left:0;
+    height:100%;
+    width:100%;
+    background-color:grey;
+    z-index:1;
 }
 .book_header{
     text-align: right;
@@ -67,13 +89,15 @@ input[type=number], input[type=text]{
 }
 .form_container{
     display: flex;
-    width: 100%;
+    width: auto;
     height: 500px;
     justify-content: center;
     align-items: center;
     transition: opacity 2s linear, margin-top 2s step-start, z-index 2s step-start;
-
-
+    z-index:99999;
+    position: fixed;
+    left: 50%;
+    transform: translateX(-50%);
 }
 .form_container_hidden{
     opacity: 0;
@@ -87,7 +111,7 @@ input[type=number], input[type=text]{
 }
 #form{
     padding: 50px;
-    
+    background-color: #fff;
     box-shadow: -2px 2px 2px 2px gray;
 }
 #submit_btn{
@@ -175,3 +199,31 @@ input[type=number], input[type=text]{
 	position:relative;
 	top:1px;
 }
+@media only screen and (max-width: 600px) {
+    .book{
+        width: 100px;
+        height: 150px;
+        background-image: url("https://i.imgur.com/ZRukxtz.png");
+    
+        text-align: center;
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+        padding: 10px 10px 10px 10px;
+        max-width: 150px;
+        margin: 10px;
+        color: #fff;
+        min-width: 100px;
+        min-height: 150px;
+        box-shadow: -3px 6px 6px 1px gray
+    }
+    #container{
+        display: flex;
+        flex-direction: row;
+        padding: 10px;
+        width: auto;
+        height: auto;
+        flex-wrap: wrap;
+        justify-content: center;
+    }
+  }

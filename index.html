@@ -9,13 +9,15 @@
 </head>
 <body>
     <nav id="navbar">
+        <div id="top_title">Firebase Library</div>
         <div class="navbar_elements">
             <a class="addbook_button" href="javascript:toggleForm()">Add a book</a>
         </div>
     </nav>
+    
     <div class="form_container form_container_hidden">  
             <form id="form" name="add_book" action="#" onsubmit="return addBookToLibrary()">
-                <h2 id="form_toptitle">Add a book</h3>
+                <h2 id="form_toptitle">Add a new book</h3>
                 <br>
                 <label for="form_title" class="form_elements">Title</label>
                 <br>
@@ -38,6 +40,7 @@
                 <button id="submit_btn" class="form_elements" type="submit">Add book</button>
             </form>
         </div>
+    
     <div id="container">
         <div id="book_template" class="book">
             <div class="book_header"><a href="#" onclick="javascript:removeBook(event);"><img class="remove_book" src="https://i.imgur.com/wndGXiE.png"> </a></div>
@@ -50,7 +53,7 @@
             </div>
         </div>
     </div>
-
+    <div id="bg_overlay" ></div>
   
     <!-- The core Firebase JS SDK is always required and must be listed first -->
 <script  src="https://www.gstatic.com/firebasejs/6.3.5/firebase-app.js"></script>
