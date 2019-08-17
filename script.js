@@ -1,7 +1,7 @@
 const BOOK_READ_URL = "https://i.imgur.com/fuliKu4.png";
 const BOOK_NOTREAD_URL = "https://i.imgur.com/lQG2XCT.png";
 
-let form_container = document.querySelector("#form_container");
+let form_container = document.querySelector(".form_container");
 let book_template = document.querySelector("#book_template");
 let container = document.querySelector("#container");
 let form_flag = false;
@@ -71,11 +71,12 @@ function removeBook(book){
 
 function toggleForm(){
     if(form_flag){
-        form_container.style.display = "none";
+        //form_container.style.display = "none";
+        form_container.classList.add("form_container_hidden");
         form_flag = false;
     }
     else{
-        form_container.style.display = "flex";
+        form_container.classList.remove("form_container_hidden");
         form_flag = true;
     }
 }
