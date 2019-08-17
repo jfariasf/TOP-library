@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Library</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <nav id="navbar">
+        <div class="navbar_elements">
+            <a class="addbook_button" href="javascript:toggleForm()">Add a book</a>
+        </div>
+    </nav>
+    <div id="form_container">  
+            <form id="form" name="add_book" action="#" onsubmit="return addBookToLibrary()">
+                <h2 id="form_toptitle">Add a book</h3>
+                <br>
+                <label for="form_title" class="form_elements">Title</label>
+                <br>
+                <input id="form_title" class="form_elements" type="text" 
+                        maxlength="30" placeholder="Ex: The farm" required>
+                <br>
+                <label for="form_author" class="form_elements">Author</label>
+                <br>
+                <input id="form_author" class="form_elements" type="text" 
+                        maxlength="30" placeholder="Ex: George Orwell" required>
+                <br>
+                <label for="form_pages" class="form_elements">Total pages</label>
+                <br>
+                <input id="form_pages" class="form_elements" type="number" min="1" max="2000" required>
+                <br>
+                <div class="form_checkboxes">
+                    <label for="form_read"class="form_elements" >Did you read it?</label>
+                    <input id="form_read" class="form_elements" type="checkbox">
+                </div>
+                <button id="submit_btn" class="form_elements" type="submit">Add book</button>
+            </form>
+        </div>
+    <div id="container">
+        <div id="book_template" class="book">
+            <div class="book_header"><a href="#" onclick="javascript:removeBook(event);"><img class="remove_book" src="https://i.imgur.com/wndGXiE.png"> </a></div>
+            <div class="title">No books found</div>
+            <div class="author">Author name</div>
+            
+            <div class="book_footer">
+                <div class="pages">0</div>
+                <div class="read_icon"><a href="#" onclick="javascript:toggleRead(event)"><img class="book_read_link book_img" src=""></a></div>
+            </div>
+        </div>
+    </div>
+
+  
+    <!-- The core Firebase JS SDK is always required and must be listed first -->
+<script  src="https://www.gstatic.com/firebasejs/6.3.5/firebase-app.js"></script>
+
+
+<script  src="https://www.gstatic.com/firebasejs/6.3.5/firebase-database.js"></script>
+
+
+<!-- TODO: Add SDKs for Firebase products that you want to use
+     https://firebase.google.com/docs/web/setup#config-web-app -->
+
+<script>
+  // Your web app's Firebase configuration
+  var firebaseConfig = {
+    apiKey: "AIzaSyBT8RbOfX8iWqnAWIRuZU24tFsjrEYgPrg",
+    authDomain: "top-project-320a1.firebaseapp.com",
+    databaseURL: "https://top-project-320a1.firebaseio.com",
+    projectId: "top-project-320a1",
+    storageBucket: "",
+    messagingSenderId: "69633543888",
+    appId: "1:69633543888:web:594aa62a0c20ccaf"
+  };
+  // Initialize Firebase
+  firebase.initializeApp(firebaseConfig);
+
+</script>
+
+
+  <script src="script.js"></script>
+</body>
+</html>
