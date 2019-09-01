@@ -11,12 +11,12 @@
     <nav id="navbar">
         <div id="top_title">Firebase Library</div>
         <div class="navbar_elements">
-            <a class="addbook_button" href="javascript:toggleForm()">Add a book</a>
+            <a class="addbook_button" href="javascript:libraryInstance.toggleForm()">Add a book</a>
         </div>
     </nav>
     
     <div class="form_container form_container_hidden">  
-            <form id="form" name="add_book" action="#" onsubmit="return addBookToLibrary()">
+            <form id="form" name="add_book" action="#" onsubmit="return libraryInstance.addBookToLibrary()">
                 <h2 id="form_toptitle">Add a new book</h3>
                 <br>
                 <label for="form_title" class="form_elements">Title</label>
@@ -43,17 +43,17 @@
     
     <div id="container">
         <div id="book_template" class="book">
-            <div class="book_header"><a alt="Remove the book" title="Remove the book" onclick="javascript:removeBook(event);"><img class="remove_book" src="https://i.imgur.com/wndGXiE.png"> </a></div>
+            <div class="book_header"><a alt="Remove the book" title="Remove the book" onclick="javascript:libraryInstance.removeBook(event);"><img class="remove_book" src="https://i.imgur.com/wndGXiE.png"> </a></div>
             <div class="title">No books found</div>
             <div class="author">Author name</div>
             
             <div class="book_footer">
                 <div class="pages">0</div>
-                <div class="read_icon"><a alt="Did you read the book?" title="Did you read the book?" onclick="javascript:toggleRead(event)"><img class="book_read_link book_img" src=""></a></div>
+                <div class="read_icon"><a alt="Did you read the book?" title="Did you read the book?" onclick="javascript:libraryInstance.toggleRead(event)"><img class="book_read_link book_img" src=""></a></div>
             </div>
         </div>
     </div>
-    <div id="bg_overlay" ></div>
+    <div id="bg_overlay" onclick="javascript:libraryInstance.toggleForm()"></div>
   
     <!-- The core Firebase JS SDK is always required and must be listed first -->
 <script  src="https://www.gstatic.com/firebasejs/6.3.5/firebase-app.js"></script>
